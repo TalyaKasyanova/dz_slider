@@ -1,0 +1,329 @@
+@use "variables";
+
+/*  для слайдера */
+.slider-hero {
+  position: relative;
+}
+
+.slick {
+
+  &-track {
+    display: flex;
+  }
+
+  &-list {
+    overflow: hidden;
+  }
+
+  /* для крапок новігації */
+  &-dots {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    bottom: 50px;
+    border-radius: 50%;
+    color: $second-bg-color;
+    left: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+
+    /*  для каждой крапки */
+    & li {
+      display: inline-block;
+      // margin: 0 5px;
+      padding: 0;
+      cursor: pointer;
+
+      & button {
+        border-radius: 50%;
+        background-color: $second-bg-color;
+        color: $second-bg-color;
+        cursor: pointer;
+      }
+
+      /* для активної крапки */
+      &.slick-active button {
+        background-color: $accent-color;
+        border-radius: 50%;
+        color: $accent-color;
+        opacity: 1;
+      }
+    }
+  }
+}
+
+/* для кoжного слайда */
+.slider-hero-card1,
+.slider-hero-card2,
+.slider-hero-card3 {
+  position: relative;
+  height: 700px;
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  object-fit: cover;
+  min-width: 1400px;
+  width: 100%;
+}
+
+.slider-hero-card1 {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.84) 0%, rgba(217, 217, 217, 0) 100%),
+    url(../images/image-main-slider-1.jpg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+.slider-hero-card2 {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.84) 0%, rgba(217, 217, 217, 0) 100%),
+    url(../images/image-main-slider-2.jpg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+.slider-hero-card3 {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.84) 0%, rgba(217, 217, 217, 0) 100%),
+    url(../images/image-main-slider-3.jpg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+/* Стилі всередині слайду */
+.slider-container {
+  max-width: 1400px;
+  width: 100%;
+  margin: auto;
+  padding: 0 80px;
+
+  &-text {
+    max-width: 400px;
+    width: 100%;
+    padding-top: 120px;
+    margin-left: auto;
+    text-align: center;
+  }
+}
+
+.slider-hero-header {
+  font: $heading1;
+  color: $bg-color;
+  margin-bottom: 50px;
+}
+
+/* для кнопки */
+.slider-hero-button {
+  display: inline-block;
+  background: inherit;
+  color: $second-bg-color;
+  font: $button-status-text;
+  border: 2px solid $second-bg-color;
+  margin-left: auto;
+  padding: 15px 57px;
+  cursor: pointer;
+
+  &:hover {
+    border: 2px solid $accent-color;
+    background-color: $accent-color;
+  }
+}
+
+
+.products {
+  padding: 70px 0;
+
+  &-header {
+    font: $heading2;
+    text-align: center;
+    text-transform: uppercase;
+
+  }
+
+  &-image {
+    margin: 20px 0 10px 0;
+  }
+
+  &-slider {
+    position: relative;
+    padding: 0 50px;
+    margin: 50px 0;
+
+    .slick-track {
+      display: flex;
+      gap: 25px;
+    }
+
+    .slick-list {
+      overflow: hidden;
+    }
+
+    .slick-arrow {
+      position: absolute;
+      top: 50%;
+      width: 40px;
+      height: 74px;
+      margin: -30px 0 0 0;
+      z-index: 3;
+      font-size: 0;
+
+      &.slick-prev {
+        left: 0;
+        border: none;
+        background: url("../images/prev-left.png") 0 0/100% no-repeat;
+
+        &:hover {
+          background: url("../images/prevleft-a.png") 0 0/100% no-repeat;
+        }
+      }
+
+      &.slick-next {
+        right: 0;
+        border: none;
+        background: url("../images/next-r.png") 0 0/100% no-repeat;
+
+        &:hover {
+          background: url("../images/next-activer-a.png") 0 0/100% no-repeat;
+        }
+      }
+    }
+
+    .products-slider-item {
+      border: 1px solid $second-bg-color;
+      padding: 0 10px;
+      position: relative;
+      height: 437px;
+
+      .description {
+        font: $prod-description-text;
+        text-align: center;
+        width: 204px;
+        margin-bottom: 10px;
+      }
+
+      .price {
+        font: $price-text;
+        text-align: center;
+        width: 204px;
+        margin-bottom: 20px;
+      }
+
+      .label {
+        font: $label-text;
+        text-align: center;
+        text-transform: uppercase;
+        background-color: $accent-color;
+        color: $second-bg-color;
+        padding: 5px;
+        position: absolute;
+        left: 0;
+      }
+
+      .sold {
+        font: $label-text;
+        text-align: center;
+        text-transform: uppercase;
+        background-color: $second-bg-color;
+        color: $text-color;
+        padding: 5px 15px;
+        position: absolute;
+        left: 0;
+      }
+
+      &:hover {
+        border: 1px solid $accent-color;
+      }
+    }
+  }
+
+  .products-btn {
+    display: block;
+    background-color: transparent;
+    padding: 14px 57px;
+    border: 2px solid $text-color;
+    font: $button-status-text;
+    text-align: center;
+    text-transform: uppercase;
+    margin: auto;
+    cursor: pointer;
+
+    &:hover {
+      border: 2px solid $accent-color;
+      background-color: $accent-color;
+      color: $bg-color;
+    }
+  }
+}
+
+
+.partners {
+  background-color: $second-bg-color;
+  padding: 70px 0;
+
+  &-header {
+    font: $heading2;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  &-slider {
+    position: relative;
+    padding: 0 50px;
+    margin-top: 40px;
+
+    &-item {
+      position: relative;
+    }
+
+    &-icon {
+      display: block;
+      height: 100px;
+
+      use {
+        display: block;
+        height: 100px;
+      }
+    }
+  }
+
+  .slick-track {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .slick-list {
+    overflow: hidden;
+  }
+
+  .slick-arrow {
+    position: absolute;
+    top: 50%;
+    width: 40px;
+    height: 72px;
+    margin: -30px 0 0 0;
+    z-index: 3;
+    font-size: 0;
+
+    &.slick-prev {
+      left: 0;
+      border: none;
+      background: url("../images/prev-left.png") 0 0/100% no-repeat;
+
+      &:hover {
+        background: url("../images/prevleft-a.png") 0 0/100% no-repeat;
+      }
+    }
+
+    &.slick-next {
+      right: 0;
+      border: none;
+      background: url("../images/next-r.png") 0 0/100% no-repeat;
+
+      &:hover {
+        background: url("../images/next-activer-a.png") 0 0/100% no-repeat;
+      }
+    }
+  }
+}

@@ -1,0 +1,59 @@
+@use "variables";
+
+.header {
+  background-color: $second-bg-color;
+
+  &-logo {
+
+    &-icon {
+      width: 182px;
+      height: 34px;
+      fill: $logo-color;
+    }
+  }
+}
+
+.flex-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav {
+  &-list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+
+    &-link {
+      font: $menu-text;
+    }
+  }
+}
+
+.list-icons {
+  display: flex;
+  gap: 30px;
+
+  &-icon {
+    width: 36px;
+    height: 36px;
+
+    &-self {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      border: 2px solid $text-color;
+    }
+  }
+}
+
+.activ {
+  background-color: $accent-color;
+  padding: 28px 15px;
+
+  a {
+    color: $bg-color;
+  }
+}
